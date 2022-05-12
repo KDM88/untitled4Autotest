@@ -16,7 +16,7 @@ fun main() {
 }
 
 fun limit(transferAmount: Int, previousTransfer: Int = 0, userType: String = ACCOUNT_TYPE_VK_PAY): String {
-    return  when (userType) {
+    return when (userType) {
         ACCOUNT_TYPE_VK_PAY -> {
             if ((transferAmount + previousTransfer) >= 40_000) MESSAGE_MONTH
             else if (transferAmount >= 15_000) MESSAGE_PAYMENT
@@ -24,7 +24,7 @@ fun limit(transferAmount: Int, previousTransfer: Int = 0, userType: String = ACC
         }
         ACCOUNT_TYPE_MASTER, ACCOUNT_TYPE_MAESTRO, ACCOUNT_TYPE_VISA, ACCOUNT_TYPE_MIR -> {
             if ((transferAmount + previousTransfer) >= 600_000) MESSAGE_MONTH
-            else if  ((transferAmount + previousTransfer) >= 150_000) MESSAGE_DAY
+            else if ((transferAmount + previousTransfer) >= 150_000) MESSAGE_DAY
             else MESSAGE_COMMISSION
         }
         else -> error("Неподдерживаемый тип платежной системы")

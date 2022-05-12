@@ -113,7 +113,7 @@ class MainKtTest {
             userType = type
         )
 
-        assertEquals(0, commissionSum)
+        assertEquals(1, commissionSum)
     }
 
     @Test
@@ -219,7 +219,7 @@ class MainKtTest {
         assertEquals(MESSAGE_COMMISSION, limitMessage)
     }
 
-    @Test (expected = IllegalStateException::class)
+    @Test(expected = IllegalStateException::class)
     fun limit_error() {
         val amount = 0
         val type = MESSAGE_COMMISSION
@@ -232,7 +232,7 @@ class MainKtTest {
         assertEquals("Неподдерживаемый тип платежной системы", limitMessage)
     }
 
-    @Test (expected = IllegalStateException::class)
+    @Test(expected = IllegalStateException::class)
     fun commissionCalculate_error() {
         val amount = 80_000
         val last = 0
