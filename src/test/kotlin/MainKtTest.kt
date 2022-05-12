@@ -113,7 +113,7 @@ class MainKtTest {
             userType = type
         )
 
-        assertEquals(1, commissionSum)
+        assertEquals(0, commissionSum)
     }
 
     @Test
